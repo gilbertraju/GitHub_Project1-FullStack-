@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Trial</title>
+
+
+	<script type="text/javascript" language="javascript">
+var count=0;
+
+function cfun(){
+	if(count<15)
+		count++;
+
+
+
+if(count==15){
+	document.getElementById("xyz").innerHTML="Clicks Cannot Be more than 15";
+}
+else if (count>10) {
+	document.getElementById("xyz").innerHTML="Clicks greater than 10";
+}else if (count>5) {
+	document.getElementById("xyz").innerHTML="Clicks greater than 5";
+}
+
+	 document.getElementById('abc').innerHTML=count;
+}
+
+</script>
+
+</head>
+<body>
+<p><br>Click to Increase the count<br></p>
+<input type="button" name="Click_btn" value="Click it" onclick="cfun()">
+<p><br>The Number of Clicks:<span id="abc">0</span></p>
+<p id="xyz"></p>
+</body>
+</html>
