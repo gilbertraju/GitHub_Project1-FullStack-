@@ -4,50 +4,188 @@
 	<title>JS</title>
 
 <style type="text/css">
+.sign_btn{
+	font-weight: bold;
+	border-width: 1px;
+	width: 50px;
+	border-radius:5px;
+	padding: 8px;
+}
+.btn{
+	font-weight: bold;
+	border-width: 1px;
+	border-radius:5px;
+	padding: 8px;
+	width: 37px;
+}
+#txt{
+
+	width: 220px;
+	height: 40px;
+}
+.big_btn{
+	font-weight: bold;
+	border-width: 1px;	
+	width: 105px; 
+	border-radius: 5px;
+	padding: 8px;
+}
+.divi{
+border-radius: 10px;
+background-image: linear-gradient(to right,#203A43,#2C5364); 
+width: 240px;
+height: 250px;
+margin: 0 auto;
+
+}
+#hed{
+	position: relative;
+	top: 10px;
+	color: white;
+
+
+}
+.btn:hover{
+	box-shadow: 1px 1px 10px #eee;
+}
+.big_btn:hover{
+	box-shadow: 1px 1px 10px #eee;
+}
+.sign_btn:hover{
+	box-shadow: 1px 1px 10px #eee;
+}
+
 </style>
 
 
 </head>
 <body>
-	<textarea id="txt"></textarea>
-	<table>
-	<tr><td><button id="btn" onclick="num()">7</button></td><td><button id="btn">8</button></td><td><button class="btn">9</button></td><td><button>+</button></td><td><button>/</button></td></tr>
-	<tr><td><button id="btn">4</button></td><td><button>5</button></td><td><button>6</button></td><td><button>-</button></td></tr>
-	<tr><td><button>1</button></td><td><button>2</button></td><td><button>3</button></td><td><button>X</button></td></tr>
+	
+<div class="divi">
+	<h2 align="center" id="hed">Calculator</h2>
+
+	<table align="center">
+		<caption><textarea id="txt"></textarea></caption>
+
+	<tr><td><button class="btn" onclick="num(7)">7</button></td>
+		<td><button class="btn" onclick="num(8)">8</button></td>
+		<td><button class="btn" onclick="num(9)">9</button></td>
+		<td colspan='2'><button class="big_btn" onclick="num('#')">Clear</button></td
+			>
+		
+		</tr>
+	<tr><td><button class="btn" onclick="num(4)">4</button></td>
+		<td><button class="btn" onclick="num(5)">5</button></td>
+		<td><button class="btn" onclick="num(6)">6</button></td>
+		<td colspan='2'><button class="big_btn" onclick="clc('+')">+</button></td
+			>
+	</tr>
+
+	<tr><td><button class="btn" onclick="num(1)">1</button></td>
+		<td><button class="btn" onclick="num(2)">2</button></td>
+		<td><button class="btn" onclick="num(3)">3</button></td>
+		<td><button class="sign_btn" onclick="clc('-')">-</button></td>
+		<td><button class="sign_btn" onclick="clc('/')">/</button></td>
+		
+	</tr>
+
+	<tr><td><button class="btn" onclick="num(0)">0</button></td>
+		<td><button class="btn" onclick="num('00')">00</button></td>
+	<td><button class="btn" onclick="num('.')">.</button></td>
+	<td><button class="sign_btn" onclick="clc('*')">X</button></td>
+	<td><button class="sign_btn" onclick="clc('=')">=</button></td>
+	</tr>
+
 </table>
-
+</div>
 <script type="text/javascript">
-function num(){
-	var x=button.getElementById("btn").value;
-	document.write(x);
+function num(num1){
 
-	switch(a){
-case 1:
+
+
+	switch(num1){
+
+case 1:var x = document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"1";
 break;
-case 2:
+case 2:var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"2";
 break;
-case 3:
+case 3:var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"3";
 break;
-case 4:
+case 4:var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"4";
 break;
-case 5:
+case 5:var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"5";
 break;
-case 6:
+case 6:var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"6";
 break;
-case 7:
+case 7:var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"7";
 break;
-case 8:
+case 8:var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"8";
 break;
-case 9:
+case 9:var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"9";
 break;
-case 0:
+case 0:var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"0";
+break;
+case '00':var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"00";
+break;
+case '.':var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+".";
+break;
+case '#':var x =document.getElementById("txt").innerHTML="";
 break;
 
+
+}
 	}
 	
+function clc(nn){
+
+	var chec=document.getElementById("txt").value;
+var c = chec.length;
+var cc=chec.charAt(c-1);
+
+if (c==0||cc=='+'||cc=='-'||cc=='*'||cc=='/') {
+
+	alert("ERROR:WRONG FORMAT");
 }
-function clc(){
-	
+else{
+	switch(nn){
+
+
+case '+':var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"+";
+break;
+case '-':var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"-";
+break;
+case '/':var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"/";
+break;
+case '*':var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+"*";
+break;
+case '=':var x =document.getElementById("txt").value;
+if (chec=='+'||chec=='-'||chec=='*'||chec=='/') {
+
+	alert("ERROR:WRONG FORMAT");
+}
+else{
+	var res=eval(x);
+	document.getElementById("txt").innerHTML=res;
+}
+break;
+}
+}	
 }
 </script>
 </body>
