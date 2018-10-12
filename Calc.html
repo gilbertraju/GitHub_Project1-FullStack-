@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>JS</title>
+	<title>Calculator</title>
 
 <style type="text/css">
+	body{
+	background-color:grey;
+	}
 .sign_btn{
 	font-weight: bold;
 	border-width: 1px;
@@ -19,9 +22,10 @@
 	width: 37px;
 }
 #txt{
-
+	/*font-family: "Digital-7",monospace;*/
 	width: 220px;
 	height: 40px;
+
 }
 .big_btn{
 	font-weight: bold;
@@ -46,12 +50,15 @@ margin: 0 auto;
 
 }
 .btn:hover{
+	background-color: grey;
 	box-shadow: 1px 1px 10px #eee;
 }
 .big_btn:hover{
+	background-color: grey;
 	box-shadow: 1px 1px 10px #eee;
 }
 .sign_btn:hover{
+	background-color: grey;
 	box-shadow: 1px 1px 10px #eee;
 }
 
@@ -88,13 +95,14 @@ margin: 0 auto;
 
 	<tr><td><button class="btn" onclick="num(0)">0</button></td>
 		<td><button class="btn" onclick="num('00')">00</button></td>
-	<td><button class="btn" onclick="num('.')">.</button></td>
+	<td><button class="btn" onclick="clc('.')">.</button></td>
 	<td><button class="sign_btn" onclick="clc('*')">X</button></td>
 	<td><button class="sign_btn" onclick="clc('=')">=</button></td>
 	</tr>
 
 </table>
 </div>
+<!-- ---------------------------------------------------JavaScript-------------------------------------------------------------- -->
 <script type="text/javascript">
 function num(num1){
 
@@ -135,9 +143,7 @@ break;
 case '00':var x =document.getElementById("txt").value;
 document.getElementById("txt").innerHTML=x+"00";
 break;
-case '.':var x =document.getElementById("txt").value;
-document.getElementById("txt").innerHTML=x+".";
-break;
+
 case '#':var x =document.getElementById("txt").innerHTML="";
 break;
 
@@ -151,7 +157,7 @@ function clc(nn){
 var c = chec.length;
 var cc=chec.charAt(c-1);
 
-if (c==0||cc=='+'||cc=='-'||cc=='*'||cc=='/') {
+if (c==0||cc=='+'||cc=='-'||cc=='*'||cc=='/'||cc=='.') {
 
 	alert("ERROR:WRONG FORMAT");
 }
@@ -170,6 +176,9 @@ document.getElementById("txt").innerHTML=x+"/";
 break;
 case '*':var x =document.getElementById("txt").value;
 document.getElementById("txt").innerHTML=x+"*";
+break;
+case '.':var x =document.getElementById("txt").value;
+document.getElementById("txt").innerHTML=x+".";
 break;
 case '=':var x =document.getElementById("txt").value;
 if (chec=='+'||chec=='-'||chec=='*'||chec=='/') {
